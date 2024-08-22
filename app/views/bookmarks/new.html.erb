@@ -1,0 +1,10 @@
+<h1> Create a new Bookmark </h1>
+<hr>
+<%= simple_form_for [@list, @bookmark] do |form| %>
+  <%= form.input :comment %>
+    <%# qual filme? %>
+  <%= form.association :movie, collection: Movie.order(:title), prompt: "Choose a Movie..." %>
+  <%= form.submit %>
+<% end %>
+<hr>
+<%= link_to "Back", lists_path, class: "btn" %>
