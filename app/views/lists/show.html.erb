@@ -34,7 +34,7 @@
   <% @list.movies.each do |m| %>
     <li class="list-group-item">
       <div class="card" style="width: 20rem;">
-        <%= image_tag m.poster_url, alt: "cartaz do filme", class: "card-img-top" %>
+        <%= image_tag m.poster_url, alt: "cartaz do filme" %>
         <div class="card-header">
           <h3 class="card-title"><%= m.title %></h3>
         </div>

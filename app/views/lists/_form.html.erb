@@ -1,6 +1,7 @@
 <%= simple_form_for list do |form| %>
   <%= form.input :name %>
+  <%= form.input :photo, as: :file, placeholder: "Capa da sua lista..." %>
   <%= form.submit %>
 <% end %>
 <hr>
-<%= link_to "Back", lists_path, class: "btn" %>
+<%= link_to "Back", lists_path, class: "btn btn-dark" %>

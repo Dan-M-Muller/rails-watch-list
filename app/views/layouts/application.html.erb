@@ -11,8 +11,29 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= yield %>
+    <%# headder %>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/lists"> <%= image_tag "pocket-size.png", alt: "cartaz do filme" %> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item active">
+                <%= link_to "All Lists", lists_path, class: "btn btn-outline-light" %>
+              </li>
+              <li class="nav-item mx-3">
+                <%= link_to "Messages", lists_path, class: "btn btn-dark" %>
+              </li>
+              <!--li class="nav-item"-->
+              <!--/li-->
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <%# dentro do body %>
+    <%= yield %>
   </body>
 </html>
