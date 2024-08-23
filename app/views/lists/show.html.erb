@@ -30,9 +30,9 @@
 <hr>
 <%= link_to "Back", lists_path, class: "btn" %>
 <hr>
-<ul class="list-group">
+<ul class="list-group list-group-horizontal list-group-flush d-flex align-items-center flex-wrap">
   <% @list.movies.each do |m| %>
-    <li class="list-group-item">
+    <li class="list-group-item flex-fill mt-3">
       <div class="card" style="width: 20rem;">
         <%= image_tag m.poster_url, alt: "cartaz do filme" %>
         <div class="card-header">

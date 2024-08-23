@@ -13,17 +13,24 @@
 <hr>
 <div class="container mt-3">
 
-  <ul class="list-group list-group-horizontal list-group-flush">
+  <ul class="list-group list-group-horizontal list-group-flush d-flex align-items-center flex-wrap">
     <% @lists.each do |l| %>
-      <li class="list-group-item flex-fill">
+      <li class="list-group-item flex-fill mt-3">
         <div class="card" style="width: 18rem;">
           <%= link_to list_path(l) do %>
-            <%= image_tag "place-holder-map.png", alt: "foto da lista", class: "card-img-top btn" %>
-            <p> <%= l.name %> </p>
+            <% if l.photo.attached? %>
+              <%= cl_image_tag l.photo.key, height: 300, width: 400, crop: :fill, alt: "foto da lista", class: "card-img-top btn" %>
+            <% else %>
+              <%= image_tag "place-holder-map.png", alt: "foto da lista", class: "card-img-top btn" %>
+            <% end %>
+            <div class="card-footer pl-3">
+              <p> <%= l.name %>
+              <%= link_to "Destroy this List",  list_path(l),  data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger float-end mt-1" %> </p>
+            </div>
           <% end %>
         </div>
       </li>
     <% end %>
   </ul>
-  
+
 </div>
